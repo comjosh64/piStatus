@@ -5,6 +5,8 @@ import socket
 import datetime
 import psutil
 import credentials
+import time
+time.sleep(5)
 
 def get_cpu_temperature():
     process = Popen(['vcgencmd', 'measure_temp'], stdout=PIPE)
