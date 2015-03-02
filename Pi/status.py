@@ -5,7 +5,9 @@ import socket
 import datetime
 import psutil
 import credentials
+import time
 
+time.sleep(5)
 def get_cpu_temperature():
     process = Popen(['vcgencmd', 'measure_temp'], stdout=PIPE)
     output, _error = process.communicate()
@@ -15,13 +17,22 @@ cpu_temperature = get_cpu_temperature()
 cpu_usage = psutil.cpu_percent()
 #print 'CPU Temp: ' +  str(cpu_temperature)
 #print 'CPU: ' + str(cpu_usage) + "%"
-ram = psutil.phymem_usage()
-ram_percent_used = ram.percent
+
+#ram = psutil.phymem_usage()
+#ram_percent_used = ram.percent
+
 #print 'RAM: ' + str(ram_percent_used) + "%"
 disk = psutil.disk_usage('/')
 disk_percent_used = disk.percent
 #print 'Disk: ' + str(disk_percent_used) + "%"
-system = 'CPU: ' + str(cpu_temperature) + 'C ' + str(cpu_usage) + "%\nRam:" + str(ram_percent_used) + "% Disk:" + str(disk_percent_used) + "%\n \n"  
+
+# ---The following line should be uncommented for anything other than the Raspberry Pi 2
+#system = 'CPU: ' + str(cpu_temperature) + 'C ' + str(cpu_usage) + "%\nRam:" + str(ram_percent_used) + "% Disk:" + str(disk_percent_used) + "%\n \n"  
+
+# ---The following line should be unvommented for Raspberry Pi 2
+system = 'CPU: ' + str(cpu_temperature) + 'C ' + str(cpu_usage) + "%\nDisk:" + str(disk_percent_used) + "%\n \n"
+
+
 #print '_______'
 print system
 
