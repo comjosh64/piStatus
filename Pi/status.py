@@ -15,8 +15,7 @@ cpu_temperature = get_cpu_temperature()
 cpu_usage = psutil.cpu_percent()
 #print 'CPU Temp: ' +  str(cpu_temperature)
 #print 'CPU: ' + str(cpu_usage) + "%"
-ram = psutil.phymem_usage()
-ram_percent_used = ram.percent
+
 #print 'RAM: ' + str(ram_percent_used) + "%"
 disk = psutil.disk_usage('/')
 disk_percent_used = disk.percent
