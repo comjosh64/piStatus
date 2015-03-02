@@ -21,7 +21,7 @@ ram_percent_used = ram.percent
 disk = psutil.disk_usage('/')
 disk_percent_used = disk.percent
 #print 'Disk: ' + str(disk_percent_used) + "%"
-system = 'CPU: ' + str(cpu_temperature) + 'C ' + str(cpu_usage) + "%\nRam:" + str(ram_percent_used) + "% Disk:" + str(disk_percent_used) + "%\n \n"  
+system = 'CPU: ' + str(cpu_temperature) + 'C ' + str(cpu_usage) + "%\nDisk:" + str(disk_percent_used) + "%\n \n"  
 #print '_______'
 print system
 
